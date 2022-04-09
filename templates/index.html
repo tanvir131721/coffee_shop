@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee shop</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <a href="http://127.0.0.1:8000/#about" class="logo"> Mr. Coffee Bean <i class="fas fa-mug-hot"></i> </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#menu">Our menu</a>
+        <a href="#review">reviews</a>
+        <a href="#book">book</a>
+    </nav>
+
+    <a href="http://127.0.0.1:8000/#book" class="btn">book a table</a>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+{% include 'home.html' %}
+<!-- home section ends -->
+
+<!-- about section starts  -->
+{% include 'about.html' %}
+<!-- about section ends -->
+
+<!-- menu section starts  -->
+
+{% include 'menu.html' %}
+
+<!-- menu section ends -->
+
+<!-- review section starts  -->
+
+{% include 'review.html' %}
+<!-- review section ends -->
+
+<!-- book section starts  -->
+
+
+<section class="book" id="book">
+
+    <h1 class="heading"> booking <span>Make yourself Happy!</span> </h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="your name" class="box" name="name">
+        <input type="email" placeholder="your email" class="box" name="email">
+        <input type="number" placeholder="your number" class="box" name="phone">
+
+        <textarea name="message" placeholder="book a table or coffee for you..." class="box" id="" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="send message" class="btn">
+
+    </form>
+
+</section>
+
+<!-- book section ends -->
+
+<!-- footer section starts  -->
+
+
+{% include 'footer.html' %}
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
